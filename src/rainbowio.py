@@ -19,12 +19,8 @@ def colorwheel(color_value):
     :param int color_value: 0-255 of color value to return
     :return: tuple of RGB values
     """
-    color_value = int(color_value)
-    if color_value < 0 or color_value > 255:
-        r = 0
-        g = 0
-        b = 0
-    elif color_value < 85:
+    color_value = int(color_value) % 256
+    if color_value < 85:
         r = int(255 - color_value * 3)
         g = int(color_value * 3)
         b = 0
